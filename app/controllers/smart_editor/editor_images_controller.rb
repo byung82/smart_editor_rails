@@ -18,7 +18,7 @@ module SmartEditor
       if @editor_image.save
         @result = true
         File.delete(tempfile_path)
-        render :text => "iImageID=#{@editor_image.id}&sFileURL=#{@editor_image.file.url}&bNewLine=true"
+        render :text => "iImageID=#{@editor_image.id}&sFileURL=#{@editor_image.thumb.url}&bNewLine=true"
       else
         @result = false
         render :text => "image upload failed"
